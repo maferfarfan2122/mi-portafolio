@@ -1,0 +1,284 @@
+<div class="project-detail-page" *ngIf="project">
+  
+  <!-- Navigation Header -->
+  <nav class="project-nav">
+    <div class="nav-frame">
+      <div class="frame-header">
+        <div class="frame-controls">
+          <span class="control close"></span>
+          <span class="control minimize"></span>
+          <span class="control maximize"></span>
+        </div>
+        <span class="frame-title">{{ project.category }}</span>
+      </div>
+      
+      <div class="nav-content">
+        <button class="back-btn" (click)="goBack()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M19 12H5M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          {{ 'project.backToPortfolio' | translate }}
+        </button>
+        
+        <div class="project-meta">
+          <span class="project-year">{{ project.year }}</span>
+          <span class="project-duration">{{ project.duration }}</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="project-hero" [style.--project-color]="project.color">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="project-category-badge">{{ project.category }}</div>
+        <h1 class="project-title">{{ project.title }}</h1>
+        <p class="project-description">{{ project.longDescription }}</p>
+        
+        <div class="project-links">
+          <button 
+            *ngIf="project.liveUrl" 
+            class="link-btn primary"
+            (click)="openLink(project.liveUrl)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.72" stroke="currentColor" stroke-width="2"/>
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.72-1.72" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            {{ 'project.viewLive' | translate }}
+          </button>
+          
+          <button 
+            *ngIf="project.githubUrl" 
+            class="link-btn secondary"
+            (click)="openLink(project.githubUrl)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            {{ 'project.viewCode' | translate }}
+          </button>
+          
+          <button 
+            *ngIf="project.figmaUrl" 
+            class="link-btn secondary"
+            (click)="openLink(project.figmaUrl)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z" stroke="currentColor" stroke-width="2"/>
+              <path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z" stroke="currentColor" stroke-width="2"/>
+              <path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z" stroke="currentColor" stroke-width="2"/>
+              <path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z" stroke="currentColor" stroke-width="2"/>
+              <path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            {{ 'project.viewDesign' | translate }}
+          </button>
+        </div>
+      </div>
+      
+      <div class="hero-image">
+        <div class="image-frame">
+          <div class="frame-header">
+            <div class="frame-controls">
+              <span class="control close"></span>
+              <span class="control minimize"></span>
+              <span class="control maximize"></span>
+            </div>
+            <span class="frame-title">{{ 'project.preview' | translate }}</span>
+          </div>
+          <img [src]="project.image" [alt]="project.title">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Gallery -->
+  <section class="project-gallery" *ngIf="project.images && project.images.length > 1">
+    <div class="gallery-container">
+      <div class="section-header">
+        <h2>{{ 'project.gallery' | translate }}</h2>
+      </div>
+      
+      <div class="gallery-grid">
+        <div 
+          *ngFor="let image of project.images; let i = index" 
+          class="gallery-item"
+          [class]="'item-' + (i + 1)">
+          <div class="image-frame">
+            <div class="frame-header">
+              <div class="frame-controls">
+                <span class="control close"></span>
+                <span class="control minimize"></span>
+                <span class="control maximize"></span>
+              </div>
+              <span class="frame-title">{{ 'project.screenshot' | translate }} {{ i + 1 }}</span>
+            </div>
+            <img [src]="image" [alt]="project.title + ' screenshot ' + (i + 1)">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Details -->
+  <section class="project-details">
+    <div class="details-container">
+      <div class="details-grid">
+        
+        <!-- Technologies -->
+        <div class="detail-card">
+          <div class="card-frame">
+            <div class="frame-header">
+              <div class="frame-controls">
+                <span class="control close"></span>
+                <span class="control minimize"></span>
+                <span class="control maximize"></span>
+              </div>
+              <span class="frame-title">{{ 'project.technologies' | translate }}</span>
+            </div>
+            <div class="card-content">
+              <div class="tech-tags">
+                <span 
+                  *ngFor="let tech of project.technologies; trackBy: trackByFeature" 
+                  class="tech-tag">
+                  {{ tech }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Features -->
+        <div class="detail-card">
+          <div class="card-frame">
+            <div class="frame-header">
+              <div class="frame-controls">
+                <span class="control close"></span>
+                <span class="control minimize"></span>
+                <span class="control maximize"></span>
+              </div>
+              <span class="frame-title">{{ 'project.features' | translate }}</span>
+            </div>
+            <div class="card-content">
+              <ul class="feature-list">
+                <li *ngFor="let feature of project.features; trackBy: trackByFeature">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                  {{ feature }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Challenges & Solutions -->
+        <div class="detail-card full-width">
+          <div class="card-frame">
+            <div class="frame-header">
+              <div class="frame-controls">
+                <span class="control close"></span>
+                <span class="control minimize"></span>
+                <span class="control maximize"></span>
+              </div>
+              <span class="frame-title">{{ 'project.challengesAndSolutions' | translate }}</span>
+            </div>
+            <div class="card-content">
+              <div class="challenges-solutions">
+                <div class="challenges">
+                  <h4>{{ 'project.challenges' | translate }}</h4>
+                  <ul>
+                    <li *ngFor="let challenge of project.challenges; trackBy: trackByFeature">
+                      {{ challenge }}
+                    </li>
+                  </ul>
+                </div>
+                <div class="solutions">
+                  <h4>{{ 'project.solutions' | translate }}</h4>
+                  <ul>
+                    <li *ngFor="let solution of project.solutions; trackBy: trackByFeature">
+                      {{ solution }}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div class="detail-card full-width">
+          <div class="card-frame results-card">
+            <div class="frame-header">
+              <div class="frame-controls">
+                <span class="control close"></span>
+                <span class="control minimize"></span>
+                <span class="control maximize"></span>
+              </div>
+              <span class="frame-title">{{ 'project.results' | translate }}</span>
+            </div>
+            <div class="card-content">
+              <div class="results-grid">
+                <div 
+                  *ngFor="let result of project.results; trackBy: trackByFeature" 
+                  class="result-item">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="currentColor"/>
+                  </svg>
+                  <span>{{ result }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team & Role -->
+        <div class="detail-card">
+          <div class="card-frame">
+            <div class="frame-header">
+              <div class="frame-controls">
+                <span class="control close"></span>
+                <span class="control minimize"></span>
+                <span class="control maximize"></span>
+              </div>
+              <span class="frame-title">{{ 'project.team' | translate }}</span>
+            </div>
+            <div class="card-content">
+              <div class="role-info">
+                <h4>{{ 'project.myRole' | translate }}</h4>
+                <p>{{ project.role }}</p>
+              </div>
+              <div class="team-info">
+                <h4>{{ 'project.teamMembers' | translate }}</h4>
+                <ul>
+                  <li *ngFor="let member of project.team; trackBy: trackByFeature">
+                    {{ member }}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- Loading State -->
+<div class="loading-container" *ngIf="isLoading">
+  <div class="loading-frame">
+    <div class="frame-header">
+      <div class="frame-controls">
+        <span class="control close"></span>
+        <span class="control minimize"></span>
+        <span class="control maximize"></span>
+      </div>
+      <span class="frame-title">{{ 'project.loading' | translate }}</span>
+    </div>
+    <div class="loading-content">
+      <div class="loading-spinner"></div>
+      <p>{{ 'project.loadingMessage' | translate }}</p>
+    </div>
+  </div>
+</div>

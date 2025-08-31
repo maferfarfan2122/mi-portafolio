@@ -1,0 +1,117 @@
+<section class="comments-section">
+  <div class="comments-container">
+    <!-- Header -->
+    <div class="section-header">
+      <div class="header-frame">
+        <div class="frame-header">
+          <div class="frame-controls">
+            <span class="control close"></span>
+            <span class="control minimize"></span>
+            <span class="control maximize"></span>
+          </div>
+          <span class="frame-title">{{ 'testimonials.frameTitle' | translate }}</span>
+        </div>
+        
+        <div class="header-content">
+          <h2>{{ 'testimonials.title' | translate }} <span class="highlight">{{ 'testimonials.titleHighlight' | translate }}</span></h2>
+          <div class="subtitle-badge">{{ 'testimonials.badge1' | translate }}</div>
+          <div class="subtitle-badge secondary">{{ 'testimonials.badge2' | translate }}</div>
+          
+          <p class="header-description">
+            {{ 'testimonials.description' | translate }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carrusel de Testimonios -->
+    <div class="carousel-wrapper" 
+         (mouseenter)="onMouseEnter()" 
+         (mouseleave)="onMouseLeave()">
+      
+      <div class="carousel-container">
+        <div 
+          *ngFor="let testimonial of testimonials; let i = index" 
+          class="testimonial-card"
+          [attr.data-index]="i"
+        >
+          <div class="card-frame" [style.background]="testimonial.bgColor">
+            <div class="frame-header">
+              <div class="frame-controls">
+                <span class="control close"></span>
+                <span class="control minimize"></span>
+                <span class="control maximize"></span>
+              </div>
+              <span class="frame-title">{{ testimonial.platform }}</span>
+              <div class="platform-icon">{{ getPlatformIcon(testimonial.platform) }}</div>
+            </div>
+            
+            <div class="card-content">
+              <div class="testimonial-header">
+                <div class="user-info">
+                  <img [src]="testimonial.avatar" [alt]="testimonial.name" class="user-avatar">
+                  <div class="user-details">
+                    <h3 class="user-name">{{ testimonial.name }}</h3>
+                    <p class="user-role">{{ testimonial.role }}</p>
+                    <p class="user-company">&#64; {{ testimonial.company }}</p>
+                  </div>
+                </div>
+                <div class="testimonial-meta">
+                  <div class="rating">{{ getStarRating(testimonial.rating) }}</div>
+                  <div class="date">{{ testimonial.date }}</div>
+                </div>
+              </div>
+              
+              <div class="testimonial-content">
+                <p>"{{ testimonial.content }}"</p>
+              </div>
+              
+              <div class="testimonial-footer">
+                <button class="like-btn">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M8 12.4L7.2 11.7C4.9 9.6 3.4 8.2 3.4 6.5C3.4 5.1 4.5 4 5.9 4C6.6 4 7.3 4.3 7.7 4.8H8.3C8.7 4.3 9.4 4 10.1 4C11.5 4 12.6 5.1 12.6 6.5C12.6 8.2 11.1 9.6 8.8 11.7L8 12.4Z" fill="currentColor"/>
+                  </svg>
+                  {{ 'testimonials.helpful' | translate }}
+                </button>
+                <button class="share-btn">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M11 9.5C10.6 9.5 10.2 9.7 9.9 10L6.1 7.8C6.15 7.6 6.2 7.3 6.2 7S6.15 6.4 6.1 6.2L9.8 4C10.1 4.3 10.5 4.5 11 4.5C12 4.5 12.8 3.7 12.8 2.7S12 0.9 11 0.9 9.2 1.7 9.2 2.7C9.2 2.9 9.25 3.1 9.3 3.3L5.6 5.5C5.3 5.2 4.9 5 4.4 5C3.4 5 2.6 5.8 2.6 6.8S3.4 8.6 4.4 8.6C4.9 8.6 5.3 8.4 5.6 8.1L9.3 10.3C9.25 10.5 9.2 10.7 9.2 10.9C9.2 11.9 10 12.7 11 12.7S12.8 11.9 12.8 10.9 12 9.5 11 9.5Z" fill="currentColor"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controles del carrusel -->
+      <button class="carousel-btn prev-btn" (click)="prevSlide()" [disabled]="isAnimating">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <button class="carousel-btn next-btn" (click)="nextSlide()" [disabled]="isAnimating">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <!-- Indicadores -->
+      <div class="carousel-dots">
+        <button 
+          *ngFor="let dot of getDots(); let i = index"
+          class="carousel-dot"
+          [class.active]="i === currentIndex"
+          (click)="goToSlide(i)"
+          [disabled]="isAnimating">
+        </button>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="carousel-progress">
+        <div class="progress-bar" [style.width.%]="((currentIndex + 1) / totalSlides) * 100"></div>
+      </div>
+    </div>
+  </div>
+</section>

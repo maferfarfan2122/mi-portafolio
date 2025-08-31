@@ -1,0 +1,70 @@
+<section class="milestones-section">
+  <div class="milestones-container">
+    
+    <!-- Main Content - Layout como la imagen -->
+    <div class="milestones-main">
+      
+      <!-- Left Side - Rotated Text -->
+      <div class="rotated-text-container">
+        <div class="rotated-text">
+          {{ 'milestones.title' | translate }}<br>{{ 'milestones.titleHighlight' | translate }}
+        </div>
+      </div>
+
+      <!-- Right Side - Stacked Bars -->
+      <div class="stacked-bars">
+        <div 
+          *ngFor="let milestone of milestones; trackBy: trackByMilestone"
+          class="milestone-bar"
+          [style.background-color]="milestone.color">
+          
+          <div class="bar-content">
+            <div class="milestone-title">
+              {{ ('milestones.items.' + milestone.id + '.title') | translate }}
+            </div>
+            
+            <!-- Imagen hover con estilo Figma -->
+            <div class="hover-image-container">
+              <div class="figma-frame">
+                <!-- Frame header -->
+                <div class="frame-header">
+                  <div class="frame-controls">
+                    <span class="control close"></span>
+                    <span class="control minimize"></span>
+                    <span class="control maximize"></span>
+                  </div>
+                  <span class="frame-title">{{ ('milestones.items.' + milestone.id + '.title') | translate }}</span>
+                </div>
+                
+                <!-- Image content -->
+                <div class="image-content">
+                  <img 
+                    [src]="milestone.image" 
+                    [alt]="milestone.imageAlt"
+                    loading="lazy">
+                  
+                  <!-- Image overlay info -->
+                  <div class="image-overlay">
+                    <div class="image-info">
+                      <span class="image-dimensions">400 × 300</span>
+                      <span class="image-format">JPG</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Frame footer -->
+                <div class="frame-footer">
+                  <div class="footer-info">
+                    <span class="milestone-icon">{{ milestone.icon }}</span>
+                    <span class="footer-text">{{ ('milestones.items.' + milestone.id + '.description') | translate }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>

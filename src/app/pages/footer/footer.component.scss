@@ -1,0 +1,522 @@
+.footer-section {
+  background-color: var(--color-dark);
+  color: var(--color-pure-white);
+  padding: 3rem 2rem 1rem 2rem;
+  position: relative;
+  overflow: hidden;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+}
+
+// Main Footer Frame
+.footer-frame {
+  background: var(--color-white);
+  border: 3px solid var(--color-dark);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 8px 8px 0px var(--color-bright-orange);
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(45deg, var(--color-bright-orange), var(--color-yellow), var(--color-pink), var(--color-orange));
+    border-radius: 23px;
+    z-index: -1;
+    opacity: 0.1;
+  }
+}
+
+// Frame Header
+.frame-header {
+  padding: 12px 16px;
+  background: var(--color-bright-orange);
+  border-bottom: 3px solid var(--color-dark);
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.frame-controls {
+  display: flex;
+  gap: 8px;
+  margin-right: 16px;
+
+  .control {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--color-dark);
+
+    &.close { background: var(--color-pink); }
+    &.minimize { background: var(--color-yellow); }
+    &.maximize { background: #27C93F; }
+  }
+}
+
+.frame-title {
+  color: var(--color-dark);
+  font-size: 14px;
+  font-family: 'Oddval Variable';
+  font-weight: 600;
+}
+
+// Footer Content
+.footer-content {
+  padding: 3rem 2rem;
+  color: var(--color-dark);
+}
+
+// Footer Grid
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+// Brand Section
+.footer-brand {
+  .brand-frame {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .brand-logo {
+    width: 60px;
+    height: 60px;
+    background: var(--color-pink);
+    border: 3px solid var(--color-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-5deg);
+    
+    .logo-text {
+      font-family: 'Oddval Variable';
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--color-white);
+    }
+  }
+  
+  .brand-info {
+    h3 {
+      font-family: 'Oddval Variable';
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      color: var(--color-dark);
+    }
+    
+    p {
+      color: var(--color-bright-orange);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+  }
+  
+  .brand-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.8;
+    margin-bottom: 1.5rem;
+  }
+}
+
+// Fun Quote
+.fun-quote {
+  .quote-frame {
+    background: var(--color-yellow);
+    border: 3px solid var(--color-dark);
+    border-radius: 15px;
+    padding: 1rem;
+    position: relative;
+    transform: rotate(1deg);
+    
+    .quote-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    p {
+      font-style: italic;
+      font-weight: 600;
+      color: var(--color-dark);
+      margin: 0;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+// Mini Frame Headers
+.frame-mini-header {
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid var(--color-dark);
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-radius: 8px 8px 0 0;
+}
+
+.mini-controls {
+  display: flex;
+  gap: 4px;
+  margin-right: 8px;
+
+  .mini-control {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-orange);
+    border: 1px solid var(--color-dark);
+  }
+}
+
+.mini-title {
+  color: var(--color-dark);
+  font-size: 12px;
+  font-family: 'Oddval Variable';
+  font-weight: 600;
+}
+
+// Footer Links
+.footer-links {
+  .links-frame {
+    background: var(--color-cream);
+    border: 2px solid var(--color-dark);
+    border-radius: 12px;
+    overflow: hidden;
+    transform: rotate(-1deg);
+  }
+  
+  .links-content {
+    padding: 1rem;
+  }
+  
+  .footer-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--color-dark);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-bottom: 0.5rem;
+    
+    &:hover {
+      background: var(--color-white);
+      transform: translateX(5px);
+      box-shadow: 2px 2px 0px var(--color-dark);
+    }
+    
+    .link-icon {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+// Social Section
+.footer-social {
+  .social-frame {
+    background: var(--color-orange);
+    border: 2px solid var(--color-dark);
+    border-radius: 12px;
+    overflow: hidden;
+    transform: rotate(1deg);
+  }
+  
+  .social-content {
+    padding: 1rem;
+  }
+  
+  .social-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    
+    .social-btn {
+      width: 40px;
+      height: 40px;
+      border: 2px solid var(--color-dark);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        transform: translateY(-3px) scale(1.1);
+        box-shadow: 3px 3px 0px var(--color-dark);
+      }
+      
+      &.email {
+        background: var(--color-yellow);
+        color: var(--color-dark);
+      }
+      
+      &.linkedin {
+        background: #0077B5;
+        color: white;
+      }
+      
+      &.github {
+        background: #333;
+        color: white;
+      }
+      
+      &.behance {
+        background: #1769FF;
+        color: white;
+      }
+    }
+  }
+  
+  .status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: #27C93F;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+// Footer Bottom
+.footer-bottom {
+  .bottom-frame {
+    background: var(--color-pink);
+    border: 3px solid var(--color-dark);
+    border-radius: 15px;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .copyright {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    
+    .copyright-icon {
+      background: var(--color-white);
+      border: 2px solid var(--color-dark);
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+  }
+  
+  .footer-fun {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    
+    .fun-elements {
+      display: flex;
+      gap: 0.5rem;
+      
+      .fun-element {
+        font-size: 1.2rem;
+        animation: bounce 2s infinite;
+        animation-delay: calc(var(--i, 0) * 0.2s);
+      }
+    }
+    
+    .made-with {
+      font-weight: 600;
+      color: var(--color-dark);
+      font-size: 0.9rem;
+    }
+  }
+  
+  .back-to-top {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--color-white);
+    color: var(--color-dark);
+    border: 2px solid var(--color-dark);
+    border-radius: 20px;
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 4px 4px 0px var(--color-dark);
+    }
+    
+    svg {
+      transition: transform 0.3s ease;
+    }
+    
+    &:hover svg {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-5px); }
+  60% { transform: translateY(-3px); }
+}
+
+// Floating Elements
+.floating-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+  
+  .floating-element {
+    position: absolute;
+    font-size: 1.5rem;
+    opacity: 0.3;
+    animation: float 6s ease-in-out infinite;
+    
+    &.element-1 {
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+    
+    &.element-2 {
+      top: 40%;
+      right: 15%;
+      animation-delay: 1.5s;
+    }
+    
+    &.element-3 {
+      bottom: 30%;
+      left: 20%;
+      animation-delay: 3s;
+    }
+    
+    &.element-4 {
+      bottom: 20%;
+      right: 25%;
+      animation-delay: 4.5s;
+    }
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(5deg); }
+  66% { transform: translateY(5px) rotate(-3deg); }
+}
+
+// Responsive Design
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .footer-frame {
+    box-shadow: 4px 4px 0px var(--color-bright-orange);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-section {
+    padding: 2rem 1rem 1rem 1rem;
+  }
+  
+  .footer-content {
+    padding: 2rem 1.5rem;
+  }
+  
+  .footer-grid {
+    gap: 1.5rem;
+  }
+  
+  .footer-brand {
+    .brand-frame {
+      flex-direction: column;
+      text-align: center;
+      gap: 0.75rem;
+    }
+  }
+  
+  .footer-bottom .bottom-frame {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .social-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-content {
+    padding: 1.5rem 1rem;
+  }
+  
+  .fun-quote .quote-frame {
+    transform: rotate(0deg);
+    padding: 0.75rem;
+  }
+  
+  .footer-links .links-frame,
+  .footer-social .social-frame {
+    transform: rotate(0deg);
+  }
+  
+  .floating-elements {
+    display: none; // Ocultar elementos flotantes en móvil
+  }
+}

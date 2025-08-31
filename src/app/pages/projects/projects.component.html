@@ -1,0 +1,83 @@
+<section class="projects-section">
+  <div class="projects-container">
+    <!-- Header Section -->
+    <div class="projects-header">
+      <div class="header-frame">
+        <div class="frame-header">
+          <div class="frame-controls">
+            <span class="control close"></span>
+            <span class="control minimize"></span>
+            <span class="control maximize"></span>
+          </div>
+          <span class="frame-title">Projects Showcase</span>
+        </div>
+        
+        <div class="header-content">
+          <h2>{{ 'projects.title' | translate }} <span class="highlight">{{ 'projects.titleHighlight' | translate }}</span></h2>
+          <div class="subtitle-badge">{{ 'projects.badge1' | translate }}</div>
+          <div class="subtitle-badge secondary">{{ 'projects.badge2' | translate }}</div>
+          
+          <p class="header-description">
+            {{ 'projects.description' | translate }}
+          </p>
+          
+          <button class="view-all-btn">
+            {{ 'projects.viewAll' | translate }}
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="projects-grid">
+      <div 
+        *ngFor="let project of projects; trackBy: trackByProject" 
+        class="project-card"
+        [style.--card-color]="project.color"
+      >
+        <div class="card-frame">
+          <div class="frame-header">
+            <div class="frame-controls">
+              <span class="control close"></span>
+              <span class="control minimize"></span>
+              <span class="control maximize"></span>
+            </div>
+            <span class="frame-title">{{ ('projects.categories.' + project.category.toLowerCase()) | translate }}</span>
+          </div>
+          
+          <div class="card-content">
+            <div class="project-image">
+              <img [src]="project.image" [alt]="project.title">
+              <div class="image-overlay"></div>
+            </div>
+            
+            <div class="project-info">
+              <h3>{{ project.title }}</h3>
+              <p class="project-description">{{ project.description }}</p>
+              
+              <div class="tech-stack">
+                <span *ngFor="let tech of project.tech" class="tech-tag">{{ tech }}</span>
+              </div>
+              
+              <button class="project-btn" (click)="viewProject(project)">
+                 {{ 'projects.viewProject' | translate }}
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+    <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+              </button>
+            </div>
+          </div>
+          
+          <!-- Corner indicators -->
+          <div class="corner top-left"></div>
+          <div class="corner top-right"></div>
+          <div class="corner bottom-left"></div>
+          <div class="corner bottom-right"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

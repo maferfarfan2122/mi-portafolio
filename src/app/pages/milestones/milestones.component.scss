@@ -1,0 +1,733 @@
+.milestones-section {
+  min-height: 100vh;
+  background-color: var(--color-dark);
+  color: var(--color-pure-white);
+  padding: 2rem 2rem;
+  position: relative;
+  overflow: visible; // IMPORTANTE: Cambiado de hidden a visible
+  display: flex;
+  align-items: center;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.milestones-container {
+  margin: 0 auto;
+  max-width: 1400px;
+  width: 100%;
+  position: relative;
+}
+
+// Main Content
+.milestones-main {
+  display: flex;
+  align-items: stretch;
+  min-height: 500px;
+  background: var(--color-white);
+  border: 4px solid var(--color-dark);
+  border-radius: 25px;
+  overflow: visible;
+  box-shadow: 12px 12px 0px var(--color-dark);
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(45deg, var(--color-bright-orange), var(--color-yellow), var(--color-pink), var(--color-orange));
+    border-radius: 29px;
+    z-index: -1;
+    opacity: 0.1;
+  }
+}
+
+// Left Side - Rotated Text
+.rotated-text-container {
+  width: 220px;
+  background: var(--color-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  
+  .rotated-text {
+    color: var(--color-yellow);
+    font-family: 'Oddval Variable';
+    font-size: 2.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1.1;
+    transform: rotate(-90deg);
+    white-space: nowrap;
+    text-align: center;
+    text-shadow: 3px 3px 0px var(--color-bright-orange);
+  }
+}
+
+// Right Side - Stacked Bars
+.stacked-bars {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: visible;
+}
+
+.milestone-bar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-bottom: 4px solid var(--color-dark);
+  transition: all 0.3s ease;
+  overflow: visible;
+  cursor: pointer;
+  
+  &:last-child {
+    border-bottom: none;
+  }
+  
+  &:hover {
+    transform: translateX(15px) scale(1.02);
+    box-shadow: -15px 0 25px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    
+    // En tablets y móviles, comportamiento tradicional
+    @media (max-width: 1024px) {
+      .hover-image-container {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(-50%) scale(1);
+      }
+    }
+  }
+  
+  .bar-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    margin: 0;
+    position: relative;
+    
+    .milestone-title {
+      font-family: 'Oddval Variable';
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: 0.05em;
+      text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      position: relative;
+    }
+  }
+  
+  // Indicador sutil de que hay contenido hover
+  &::after {
+    content: '👁️';
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 14px;
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+  }
+  
+  &:hover::after {
+    opacity: 0.7;
+  }
+}
+
+// Hover Image Container - CURSOR TRACKING MEJORADO
+.hover-image-container {
+  // Desktop: sigue el cursor
+  @media (min-width: 1025px) {
+    position: fixed;
+    top: var(--mouse-y, 50%);
+    left: var(--mouse-x, 50%);
+    transform: translate(-50%, calc(-100% - 20px)) scale(0.8);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 10000;
+    pointer-events: none;
+    width: 320px;
+    
+    &.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, calc(-100% - 20px)) scale(1);
+    }
+  }
+  
+  // Tablet: al lado del recuadro
+  @media (min-width: 769px) and (max-width: 1024px) {
+    position: absolute;
+    top: 50%;
+    right: -320px;
+    left: auto;
+    transform: translateY(-50%) scale(0.8);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 10000;
+    pointer-events: none;
+    width: 280px;
+  }
+  
+  // Móvil: arriba del recuadro
+  @media (max-width: 768px) {
+    position: absolute;
+    top: -220px;
+    right: 20px;
+    left: 20px;
+    width: auto;
+    transform: translateY(0) scale(0.8);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 10000;
+    pointer-events: none;
+  }
+}
+
+.figma-frame {
+  width: 100%;
+  background: var(--color-white);
+  border: 3px solid var(--color-dark);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 
+    8px 8px 0px var(--color-dark),
+    0 10px 30px rgba(0, 0, 0, 0.15);
+  position: relative;
+  
+  // En desktop, hacer la imagen más pequeña para mejor seguimiento
+  @media (min-width: 1025px) {
+    transform: scale(0.9);
+    transform-origin: center top;
+  }
+  
+  // Efecto de brillo sutil
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    transition: left 0.6s ease;
+    z-index: 10;
+  }
+  
+  &:hover::before {
+    left: 100%;
+  }
+}
+
+// Frame Header - Estilo Figma
+.figma-frame .frame-header {
+  padding: 8px 12px;
+  background: var(--color-bright-orange);
+  border-bottom: 3px solid var(--color-dark);
+  display: flex;
+  align-items: center;
+  height: 36px;
+  position: relative;
+}
+
+.figma-frame .frame-controls {
+  display: flex;
+  gap: 6px;
+  margin-right: 12px;
+
+  .control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--color-dark);
+    transition: transform 0.2s ease;
+
+    &.close { 
+      background: var(--color-pink);
+      &:hover { transform: scale(1.1); }
+    }
+    &.minimize { 
+      background: var(--color-yellow);
+      &:hover { transform: scale(1.1); }
+    }
+    &.maximize { 
+      background: #27C93F;
+      &:hover { transform: scale(1.1); }
+    }
+  }
+}
+
+.figma-frame .frame-title {
+  color: var(--color-dark);
+  font-size: 12px;
+  font-family: 'Oddval Variable';
+  font-weight: 600;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  flex: 1;
+}
+
+// Image Content
+.image-content {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  background: #f5f5f5;
+  
+  // Loading spinner
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--color-dark);
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+  }
+  
+  // Ocultar spinner cuando la imagen carga
+  &.image-loaded::before {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  // Estado de error
+  &.image-error::before {
+    display: none;
+  }
+  
+  &.image-error::after {
+    content: '❌';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    z-index: 2;
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    
+    &.loaded {
+      opacity: 1;
+    }
+  }
+  
+  &:hover img.loaded {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+// Image Overlay
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 60%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-content:hover .image-overlay {
+  opacity: 1;
+}
+
+.image-info {
+  display: flex;
+  gap: 12px;
+  
+  span {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--color-dark);
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 600;
+    border: 1px solid var(--color-dark);
+  }
+}
+
+// Frame Footer
+.frame-footer {
+  padding: 12px;
+  background: var(--color-white);
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  
+  .milestone-icon {
+    font-size: 16px;
+    background: var(--color-yellow);
+    border: 2px solid var(--color-dark);
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  
+  .footer-text {
+    font-size: 11px;
+    color: var(--color-dark);
+    line-height: 1.3;
+    opacity: 0.8;
+    font-weight: 500;
+  }
+}
+
+// Colores específicos para cada barra
+.milestone-bar:nth-child(1) {
+  background: var(--color-bright-orange);
+  
+  .milestone-title {
+    color: var(--color-white);
+  }
+}
+
+.milestone-bar:nth-child(2) {
+  background: var(--color-pink);
+  
+  .milestone-title {
+    color: var(--color-white);
+  }
+}
+
+.milestone-bar:nth-child(3) {
+  background: var(--color-orange);
+  
+  .milestone-title {
+    color: var(--color-white);
+  }
+}
+
+.milestone-bar:nth-child(4) {
+  background: var(--color-yellow);
+  
+  .milestone-title {
+    color: var(--color-dark);
+  }
+}
+
+.milestone-bar:nth-child(5) {
+  background: var(--color-bright-orange);
+  
+  .milestone-title {
+    color: var(--color-white);
+  }
+}
+
+// Animaciones
+@keyframes imageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(20px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0) scale(1);
+  }
+}
+
+@keyframes cursorImageAppear {
+  from {
+    opacity: 0;
+    transform: translate(-50%, calc(-100% - 20px)) scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, calc(-100% - 20px)) scale(1);
+  }
+}
+
+@keyframes bounceInLeft {
+  from {
+    transform: translateX(-100px) rotate(-90deg) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(10px) rotate(-90deg) scale(1.1);
+  }
+  to {
+    transform: translateX(0) rotate(-90deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceInRight {
+  from {
+    transform: translateX(100px) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-10px) scale(1.05);
+  }
+  to {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-2deg); }
+  75% { transform: rotate(2deg); }
+}
+
+// Aplicar animaciones
+.rotated-text {
+  animation: bounceInLeft 1.2s ease-out;
+}
+
+.milestone-bar {
+  animation: bounceInRight 1s ease-out;
+  animation-delay: calc(var(--index, 0) * 0.15s);
+  animation-fill-mode: both;
+  
+  &:hover {
+    .milestone-title {
+      animation: wiggle 0.5s ease-in-out;
+    }
+  }
+}
+
+// Aplicar animación específica según dispositivo
+@media (min-width: 1025px) {
+  .milestone-bar:hover .hover-image-container.visible {
+    animation: cursorImageAppear 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@media (max-width: 1024px) {
+  .milestone-bar:hover .hover-image-container {
+    animation: imageSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+// Responsive Design
+@media (max-width: 1024px) {
+  .milestones-main {
+    min-height: 400px;
+    box-shadow: 8px 8px 0px var(--color-dark);
+  }
+  
+  .rotated-text-container {
+    width: 170px;
+    
+    .rotated-text {
+      font-size: 2.2rem;
+    }
+  }
+  
+  .milestone-bar .bar-content .milestone-title {
+    font-size: 1.8rem;
+  }
+  
+  .image-content {
+    height: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .milestones-section {
+    padding: 4rem 1rem;
+    overflow: hidden;
+  }
+  
+  .milestones-main {
+    flex-direction: column;
+    min-height: auto;
+    box-shadow: 6px 6px 0px var(--color-dark);
+    overflow: hidden;
+  }
+  
+  .rotated-text-container {
+    width: 100%;
+    height: 140px;
+    
+    .rotated-text {
+      transform: rotate(0deg);
+      font-size: 2.8rem;
+      text-shadow: 2px 2px 0px var(--color-bright-orange);
+    }
+  }
+  
+  .milestone-bar {
+    border-bottom: 4px solid var(--color-dark);
+    border-right: none;
+    
+    &:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+      
+      .hover-image-container {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) scale(1);
+      }
+    }
+    
+    .bar-content {
+      padding: 2rem 1.5rem;
+      
+      .milestone-title {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  
+  .figma-frame {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    box-shadow: 4px 4px 0px var(--color-dark);
+    transform: none; // Reset scale en móvil
+  }
+  
+  .image-content {
+    height: 140px;
+    
+    &::before {
+      width: 16px;
+      height: 16px;
+    }
+    
+    &.image-error::after {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .milestones-main {
+    margin: 0 1rem;
+    box-shadow: 4px 4px 0px var(--color-dark);
+  }
+  
+  .milestone-bar .bar-content {
+    padding: 1.5rem 1rem;
+    
+    .milestone-title {
+      font-size: 1.3rem;
+    }
+  }
+  
+  .rotated-text-container .rotated-text {
+    font-size: 2.2rem;
+  }
+  
+  .hover-image-container {
+    top: -200px;
+    right: 10px;
+    left: 10px;
+  }
+  
+  .figma-frame {
+    max-width: 260px;
+    box-shadow: 3px 3px 0px var(--color-dark);
+    
+    .frame-header {
+      padding: 6px 10px;
+      height: 32px;
+    }
+    
+    .frame-controls .control {
+      width: 10px;
+      height: 10px;
+    }
+  }
+  
+  .image-content {
+    height: 120px;
+    
+    &::before {
+      width: 14px;
+      height: 14px;
+    }
+    
+    &.image-error::after {
+      font-size: 1.2rem;
+    }
+  }
+  
+  .frame-footer {
+    padding: 10px;
+  }
+  
+  .milestone-icon {
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+  }
+}
+
+// DEBUG: Descomenta para verificar posicionamiento
+/*
+.hover-image-container {
+  opacity: 1 !important;
+  visibility: visible !important;
+  border: 2px solid red !important;
+  background: rgba(255, 0, 0, 0.1) !important;
+}
+
+@media (min-width: 1025px) {
+  .hover-image-container {
+    transform: translate(-50%, calc(-100% - 20px)) scale(1) !important;
+  }
+}
+*/

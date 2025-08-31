@@ -1,0 +1,129 @@
+<div class="landing-page">
+  <app-navbar></app-navbar>
+
+  <section class="hero-section">
+    <!-- Círculos superiores derechos -->
+    <div class="corner-circles top-right">
+      <div class="circle circle-1"></div>
+      <div class="circle circle-2"></div>
+      <div class="circle circle-3"></div>
+      <div class="circle circle-4"></div>
+    </div>
+
+    <!-- Círculos inferiores izquierdos -->
+    <div class="corner-circles bottom-left">
+      <div class="circle circle-1"></div>
+      <div class="circle circle-2"></div>
+      <div class="circle circle-3"></div>
+      <div class="circle circle-4"></div>
+    </div>
+    
+    <div class="hero-text">
+      <h1>{{ 'hero.name' | translate }}</h1>
+      
+      <!-- Rectángulos que bajan desde el título -->
+      <div class="falling-rectangles">
+        <div class="rectangle rectangle-1"></div>
+        <div class="rectangle rectangle-2"></div>
+        <div class="rectangle rectangle-3"></div>
+        <div class="rectangle rectangle-4"></div>
+      </div>
+      
+      <div class="skills-container">
+        <h2 class="skills-text">
+          <span class="skill-word">{{ 'hero.skills.uxui' | translate }}</span>
+          <span class="skill-word">{{ 'hero.skills.designer' | translate }}</span>
+          <span class="skill-word">•</span>
+          <span class="skill-word">{{ 'hero.skills.full' | translate }}</span>
+          <span class="skill-word">{{ 'hero.skills.stack' | translate }}</span>
+          <span class="skill-word">{{ 'hero.skills.developer' | translate }}</span>
+          <span class="skill-word">•</span>
+          <span class="skill-word">{{ 'hero.skills.creative' | translate }}</span>
+          <span class="skill-word">{{ 'hero.skills.developer' | translate }}</span>
+        </h2>
+      </div>
+
+      <!-- Foto simple con handles -->
+      <div class="hero-photo-container">
+        <div class="image-container">
+          <img 
+            src="https://images.pexels.com/photos/33600936/pexels-photo-33600936.jpeg" 
+            alt="María Fernanda - UX/UI Designer & Developer"
+            class="profile-image"
+          >
+          
+          <!-- Handlers de redimensión -->
+          <div class="resize-handles">
+            <div class="handle top-left"></div>
+            <div class="handle top-right"></div>
+            <div class="handle bottom-left"></div>
+            <div class="handle bottom-right"></div>
+            <div class="handle top"></div>
+            <div class="handle bottom"></div>
+            <div class="handle left"></div>
+            <div class="handle right"></div>
+          </div>
+        </div>
+        
+        <!-- Indicador de scroll -->
+        <div class="scroll-indicator">
+          <div class="scroll-text">
+            <span>Scroll para conocer más</span>
+          </div>
+          <div class="scroll-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M7 13L12 18L17 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M7 6L12 11L17 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <div class="about-content">
+      <div class="corner top-left"></div>
+      <div class="corner top-right"></div>
+      <div class="corner bottom-left"></div>
+      <div class="corner bottom-right"></div>
+      
+      <div class="section-title">
+        <h2>{{ 'about.title' | translate }}<span class="highlight">{{ 'about.titleHighlight' | translate }}</span></h2>
+        <div class="title-badge">{{ 'about.badge' | translate }}</div>
+      </div>
+      
+      <div class="description">
+        <p>{{ 'about.description' | translate }}</p>
+      </div>
+      
+      <a href="#projects" class="cta-button">
+        {{ 'about.cta' | translate }}
+        <svg class="arrow-icon" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M17.92 11.62a1 1 0 0 0-.21-.33l-5-5a1 1 0 0 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1 1 0 0 0 1.42 1.42l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76z"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Visual elements para las franjas -->
+    <div class="visual-elements">
+      <div class="stripe-pattern">
+        <div class="stripe stripe-1"></div>
+        <div class="stripe stripe-2"></div>
+        <div class="stripe stripe-3"></div>
+        <div class="stripe stripe-4"></div>
+      </div>
+    </div>
+  </section>
+
+  <app-projects></app-projects>
+
+  <app-milestones></app-milestones>
+
+  <app-comments></app-comments>
+  
+  <app-contact></app-contact>
+
+  <app-footer></app-footer>
+
+</div>
