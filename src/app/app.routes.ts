@@ -9,7 +9,8 @@ export const routes: Routes = [
   },
   {
     path: 'project/:id',
-    component: PageProjectsComponent
+    component: PageProjectsComponent,
+    data: { ssr: true } // Habilitar SSR para esta ruta
   },
   {
     path: '**',

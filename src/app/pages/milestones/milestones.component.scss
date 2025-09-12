@@ -282,8 +282,11 @@
 .figma-frame .frame-title {
   color: var(--color-dark);
   font-size: 12px;
-  font-family: 'Oddval Variable';
-  font-weight: 600;
+ font-family: -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;  font-weight: 600;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;

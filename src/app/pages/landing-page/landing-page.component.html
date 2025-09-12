@@ -1,7 +1,7 @@
 <div class="landing-page">
   <app-navbar></app-navbar>
 
-  <section class="hero-section">
+  <section id="home" class="hero-section">
     <!-- Círculos superiores derechos -->
     <div class="corner-circles top-right">
       <div class="circle circle-1"></div>
@@ -47,7 +47,7 @@
       <div class="hero-photo-container">
         <div class="image-container">
           <img 
-            src="https://images.pexels.com/photos/33600936/pexels-photo-33600936.jpeg" 
+            src="https://i.postimg.cc/RVsy54Rq/IMG-4170.jpg" 
             alt="María Fernanda - UX/UI Designer & Developer"
             class="profile-image"
           >
@@ -81,7 +81,7 @@
     </div>
   </section>
 
-  <section class="about-section">
+  <section id="about" class="about-section">
     <div class="about-content">
       <div class="corner top-left"></div>
       <div class="corner top-right"></div>
@@ -96,13 +96,15 @@
       <div class="description">
         <p>{{ 'about.description' | translate }}</p>
       </div>
-      
+       <!-- 
       <a href="#projects" class="cta-button">
         {{ 'about.cta' | translate }}
         <svg class="arrow-icon" width="24" height="24" viewBox="0 0 24 24">
           <path d="M17.92 11.62a1 1 0 0 0-.21-.33l-5-5a1 1 0 0 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1 1 0 0 0 1.42 1.42l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76z"/>
         </svg>
       </a>
+      -->
+
     </div>
 
     <!-- Visual elements para las franjas -->
@@ -116,13 +118,13 @@
     </div>
   </section>
 
-  <app-projects></app-projects>
+  <app-projects id="projects"></app-projects>
 
   <app-milestones></app-milestones>
 
   <app-comments></app-comments>
   
-  <app-contact></app-contact>
+  <app-contact id="contact"></app-contact>
 
   <app-footer></app-footer>
 

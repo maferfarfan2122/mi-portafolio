@@ -47,7 +47,7 @@
             </svg>
             {{ 'project.viewLive' | translate }}
           </button>
-          
+          <!--
           <button 
             *ngIf="project.githubUrl" 
             class="link-btn secondary"
@@ -57,7 +57,7 @@
             </svg>
             {{ 'project.viewCode' | translate }}
           </button>
-          
+          -->
           <button 
             *ngIf="project.figmaUrl" 
             class="link-btn secondary"
@@ -171,6 +171,34 @@
           </div>
         </div>
 
+        <!-- Team & Role -->
+        <div class="detail-card">
+          <div class="card-frame">
+            <div class="frame-header">
+              <div class="frame-controls">
+                <span class="control close"></span>
+                <span class="control minimize"></span>
+                <span class="control maximize"></span>
+              </div>
+              <span class="frame-title">{{ 'project.team' | translate }}</span>
+            </div>
+            <div class="card-content">
+              <div class="role-info">
+                <h4>{{ 'project.myRole' | translate }}</h4>
+                <p>{{ project.role }}</p>
+              </div>
+              <div class="team-info">
+                <h4>{{ 'project.teamMembers' | translate }}</h4>
+                <ul>
+                  <li *ngFor="let member of project.team; trackBy: trackByFeature">
+                    {{ member }}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Challenges & Solutions -->
         <div class="detail-card full-width">
           <div class="card-frame">
@@ -231,33 +259,7 @@
           </div>
         </div>
 
-        <!-- Team & Role -->
-        <div class="detail-card">
-          <div class="card-frame">
-            <div class="frame-header">
-              <div class="frame-controls">
-                <span class="control close"></span>
-                <span class="control minimize"></span>
-                <span class="control maximize"></span>
-              </div>
-              <span class="frame-title">{{ 'project.team' | translate }}</span>
-            </div>
-            <div class="card-content">
-              <div class="role-info">
-                <h4>{{ 'project.myRole' | translate }}</h4>
-                <p>{{ project.role }}</p>
-              </div>
-              <div class="team-info">
-                <h4>{{ 'project.teamMembers' | translate }}</h4>
-                <ul>
-                  <li *ngFor="let member of project.team; trackBy: trackByFeature">
-                    {{ member }}
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+        
 
       </div>
     </div>

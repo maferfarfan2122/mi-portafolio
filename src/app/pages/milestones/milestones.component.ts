@@ -16,40 +16,40 @@ export class MilestonesComponent implements AfterViewInit {
       color: '#F96D28',
       icon: '🎤',
       borderColor: '#2D2D2D',
-      image: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=400&h=300&fit=crop&crop=center',
-      imageAlt: 'Expert giving a presentation'
+      image: 'https://i.postimg.cc/DwJ0Dcz0/1751701974965.jpg',
+      imageAlt: ''
     },
     {
       id: 1,
       color: '#E91E63',
       icon: '🎮',
       borderColor: '#2D2D2D',
-      image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=400&h=300&fit=crop&crop=center',
-      imageAlt: 'People playing games and having fun'
+      image: 'https://i.postimg.cc/47wTcS6D/IMG-5248.jpg',
+      imageAlt: ''
     },
     {
       id: 2,
       color: '#F39C12',
       icon: '🍕',
       borderColor: '#2D2D2D',
-      image: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=300&fit=crop&crop=center',
-      imageAlt: 'Delicious food and drinks'
+      image: 'https://i.postimg.cc/JHnC55KG/1740476543254.jpg',
+      imageAlt: ''
     },
     {
       id: 3,
       color: '#F1C40F',
       icon: '🎵',
       borderColor: '#2D2D2D',
-      image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop&crop=center',
-      imageAlt: 'Live music performance'
+      image: 'https://i.postimg.cc/ZBJSCSdP/IMG-5249.jpg',
+      imageAlt: ''
     },
     {
       id: 4,
       color: '#E67E22',
       icon: '🤝',
       borderColor: '#2D2D2D',
-      image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=300&fit=crop&crop=center',
-      imageAlt: 'Community networking event'
+      image: 'https://i.postimg.cc/G2VzrKC2/muck.png',
+      imageAlt: ''
     }
   ];
 

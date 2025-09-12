@@ -47,13 +47,13 @@ export class ContactComponent {
 
   openLinkedIn() {
     if (isPlatformBrowser(this.platformId)) {
-      window.open('https://linkedin.com/in/maferfarfan', '_blank');
+      window.open('https://www.linkedin.com/in/maferfarfan/', '_blank');
     }
   }
 
   openGitHub() {
     if (isPlatformBrowser(this.platformId)) {
-      window.open('https://github.com/maferfarfan', '_blank');
+      window.open('https://www.linkedin.com/in/maferfarfan/', '_blank');
     }
   }
 

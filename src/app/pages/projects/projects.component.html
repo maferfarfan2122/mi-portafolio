@@ -21,12 +21,14 @@
             {{ 'projects.description' | translate }}
           </p>
           
+          <!-- 
           <button class="view-all-btn">
             {{ 'projects.viewAll' | translate }}
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </button>
+          -->
         </div>
       </div>
     </div>
@@ -55,9 +57,10 @@
             </div>
             
             <div class="project-info">
-              <h3>{{ project.title }}</h3>
-              <p class="project-description">{{ project.description }}</p>
               
+            <h3>{{ 'projects.projectDetails.' + project.id + '.title' | translate }}</h3>
+              <p class="project-description">{{ 'projects.projectDetails.' + project.id + '.description' | translate }}</p>
+
               <div class="tech-stack">
                 <span *ngFor="let tech of project.tech" class="tech-tag">{{ tech }}</span>
               </div>

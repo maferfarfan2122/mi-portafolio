@@ -27,7 +27,7 @@ export class FooterComponent {
 
   openLinkedIn() {
     if (isPlatformBrowser(this.platformId)) {
-      window.open('https://linkedin.com/in/maferfarfan', '_blank');
+      window.open('https://linkedin.com/in/maferfarfan/', '_blank');
     }
   }
 

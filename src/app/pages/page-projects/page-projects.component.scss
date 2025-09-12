@@ -53,8 +53,8 @@
   .frame-title {
     color: var(--color-dark);
     font-size: 14px;
-    font-family: 'Oddval Variable';
-    font-weight: 600;
+  font-family:-apple-system,BlinkMacSystemFont, "Segoe UI",Roboto,sans-serif;
+  font-weight: 600;
   }
   
   .nav-content {
@@ -129,7 +129,7 @@
     }
     
     .project-title {
-      font-family: 'Oddval Variable';
+      font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       font-size: clamp(2.5rem, 5vw, 4rem);
       color: var(--color-dark);
       margin-bottom: 1.5rem;
@@ -144,6 +144,7 @@
       margin-bottom: 2rem;
       font-size: 1.1rem;
       font-weight: 500;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
     
     .project-links {
@@ -162,7 +163,7 @@
       cursor: pointer;
       transition: all 0.3s ease;
       border: 3px solid var(--color-dark);
-      font-family: 'Oddval Variable';
+      font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       
       &:hover {
         transform: translateY(-3px);
@@ -235,7 +236,7 @@
     margin-bottom: 3rem;
     
     h2 {
-      font-family: 'Oddval Variable';
+      font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       font-size: clamp(2rem, 6vw, 3rem);
       color: var(--color-dark);
       text-align: center;
@@ -292,7 +293,7 @@
   
   .details-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
   }
   
@@ -384,7 +385,7 @@
       color: var(--color-dark);
       margin-bottom: 1.5rem;
       font-size: 1.3rem;
-      font-family: 'Oddval Variable';
+      font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       font-weight: 700;
     }
     
@@ -441,6 +442,11 @@
         color: var(--color-dark);
         font-weight: 600;
         line-height: 1.4;
+         font-family: -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
       }
     }
   }
@@ -453,7 +459,7 @@
       color: var(--color-dark);
       margin-bottom: 1rem;
       font-size: 1.2rem;
-      font-family: 'Oddval Variable';
+      font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       font-weight: 700;
     }
     

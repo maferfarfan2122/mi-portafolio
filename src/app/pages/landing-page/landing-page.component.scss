@@ -38,7 +38,6 @@
     font-variation-settings: "wght" 400;
     white-space: nowrap;
     color: var(--color-black);
-    text-transform: lowercase;
     position: relative;
     padding: 0.2em 0.5em;
     letter-spacing: -0.02em;
@@ -110,10 +109,13 @@
 .hero-photo-container {
   position: absolute;
   bottom: revert-layer;
-  left: 50%;
-  transform: translateX(-50%);
   z-index: 3; // Por encima de los rectángulos pero debajo del navbar
   pointer-events: none; // No interfiere con otros elementos
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
 
 // Image Container - Más ancho que alto y más pequeño
@@ -238,15 +240,12 @@
 
 // Scroll Indicator - Encima de la imagen
 .scroll-indicator {
-
-  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.3rem;
   color: var(--color-dark);
   opacity: 0.8;
-  animation: bounce-gentle 2s ease-in-out infinite;
   pointer-events: auto; // Permite interacción
   
   .scroll-text {
@@ -255,6 +254,11 @@
       font-weight: 500;
       color: var(--color-dark);
       white-space: nowrap;
+       font-family: -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
     }
   }
   
@@ -489,7 +493,7 @@
     font-family: 'Oddval Variable';
     font-size: clamp(1.5rem, 2.5vh, 3rem);
     font-variation-settings: "wght" 400;
-    color: var(--color-blue);
+    color: var(--color-black);
     line-height: 1.3;
     
     .skill-word {
@@ -509,7 +513,7 @@
 .corner-circles {
   &.top-right, &.bottom-left {
     position: absolute;
-    z-index: 100;
+    z-index: 0;
     pointer-events: none;
     width: clamp(200px, 30vw, 400px);
     height: clamp(200px, 30vw, 400px);
@@ -613,6 +617,7 @@
   // Rectángulos más pequeños en móvil
   .falling-rectangles {
     width: 240px; // Más pequeño en móvil
+    top:-5px;
     
     .rectangle {
       width: 45px; // Rectángulos más estrechos
@@ -673,6 +678,8 @@
   // Rectángulos aún más pequeños en móviles pequeños
   .falling-rectangles {
     width: 180px;
+        top:-5px;
+
     
     .rectangle {
       width: 35px;
@@ -698,31 +705,31 @@
   
   .corner-circles {
     &.top-right, &.bottom-left {
-      width: 120px;
-      height: 120px;
+      width: 400px;
+      height: 400px;
     }
     
     .circle {
-      border-width: 2px;
+      border-width: 1px;
       
       &.circle-1 {
-        width: 100px;
-        height: 100px;
+        width: 200px;
+        height: 200px;
       }
       
       &.circle-2 {
-        width: 80px;
-        height: 80px;
+        width: 160px;
+        height: 160px;
       }
       
       &.circle-3 {
-        width: 60px;
-        height: 60px;
+        width: 120px;
+        height: 120px;
       }
       
       &.circle-4 {
-        width: 40px;
-        height: 40px;
+        width: 80px;
+        height: 80px;
       }
     }
   }
@@ -738,6 +745,8 @@
   
   .falling-rectangles {
     width: 160px;
+        top:-5px;
+
     
     .rectangle {
       width: 30px;
@@ -933,7 +942,6 @@
   right: 0;
   bottom: 0;
   width: 50%;
-  overflow: hidden;
   
   .stripe-pattern {
     position: absolute;
@@ -980,7 +988,7 @@
   }
   
   .visual-elements {
-    width: 30%;
+    width: 100%;
     opacity: 0.3;
   }
 }

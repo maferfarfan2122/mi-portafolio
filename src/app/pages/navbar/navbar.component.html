@@ -16,11 +16,35 @@
           
           <!-- Desktop navigation -->
           <ul class="nav-links desktop-only">
-            <li><a href="#home" class="active">{{ 'nav.home' | translate }}</a></li>
-            <li><a href="#about">{{ 'nav.about' | translate }}</a></li>
-            <li><a href="#projects">{{ 'nav.projects' | translate }}</a></li>
-            <li><a href="#contact">{{ 'nav.contact' | translate }}</a></li>
-          </ul>
+  <li>
+    <a href="#home" 
+       [class.active]="activeSection === 'home'"
+       (click)="scrollToSection('home', $event)">
+      {{ 'nav.home' | translate }}
+    </a>
+  </li>
+  <li>
+    <a href="#about" 
+       [class.active]="activeSection === 'about'"
+       (click)="scrollToSection('about', $event)">
+      {{ 'nav.about' | translate }}
+    </a>
+  </li>
+  <li>
+    <a href="#projects" 
+       [class.active]="activeSection === 'projects'"
+       (click)="scrollToSection('projects', $event)">
+      {{ 'nav.projects' | translate }}
+    </a>
+  </li>
+  <li>
+    <a href="#contact" 
+       [class.active]="activeSection === 'contact'"
+       (click)="scrollToSection('contact', $event)">
+      {{ 'nav.contact' | translate }}
+    </a>
+  </li>
+</ul>
 
           <div class="nav-actions desktop-only">
             <app-language-selector></app-language-selector>

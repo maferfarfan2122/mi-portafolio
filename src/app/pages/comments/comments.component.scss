@@ -54,7 +54,7 @@
   .frame-title {
     color: rgba(18, 18, 18, 0.5);
     font-size: 12px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
   
   .header-content {
@@ -82,7 +82,12 @@
       color: var(--color-dark);
       padding: 0.5rem 1rem;
       border-radius: 20px;
-      font-weight: 600;
+ font-family: -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+          font-weight: 600;
       margin-right: 0.5rem;
       margin-bottom: 1rem;
       transform: rotate(-1deg);

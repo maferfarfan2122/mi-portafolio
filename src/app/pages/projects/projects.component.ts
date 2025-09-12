@@ -4,6 +4,7 @@ import { TranslatePipe } from '../translate.pipe';
 import { Router } from '@angular/router';
 import { PLATFORM_ID, Inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { TranslationService } from '../translation.services';
 
 @Component({
   selector: 'app-projects',
@@ -14,44 +15,71 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class ProjectsComponent {
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object, private router: Router) {}
-  
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private router: Router,
+    private translationService: TranslationService
+  ) {}
+
   projects = [
     {
       id: 'ecommerce-platform', // Cambiado de 1 a 'ecommerce-platform'
       title: 'Inmetep',
-      category: 'Frontend',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop',
+      category: 'Full Stack',
+      image: 'https://iili.io/KIzbcYB.md.jpg',
       description: 'Propuesta de mejora en un sistema de control de mantenimiento aplicando la industria 4.0',
       tech: ['Research', 'PHP', 'React'],
       color: 'var(--color-orange)'
+
     },
     {
       id: 'task-management', // Cambiado de 2 a 'task-management'
       title: 'KidMoodies',
       category: 'Research',
-      image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop',
+      image: 'https://iili.io/KIIBkLQ.md.jpg',
       description: 'Aplicación que presta servicios de streaming basados en las emociones de su público',
-      tech: ['Figma', 'Research', 'Notion'],
+      tech: ['Research', 'User Persona', 'Testing', 'Figma'],
       color: 'var(--color-pink)'
     },
+
     {
       id: 'dashboard-analytics', // Cambiado de 3 a 'dashboard-analytics'
       title: 'CestAhorro',
       category: 'Design',
-      image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=300&fit=crop',
+      image: 'https://iili.io/KII5mep.md.jpg',
       description: 'Webapp para consumidores que necesitan ahorrar en la compra en supermercados',
-      tech: ['Research', 'User Persona', 'Test'],
+      tech: ['Research', 'UI', 'User Testing'],
       color: 'var(--color-yellow)'
     },
     {
       id: 'mobile-app-ui', // Nuevo ID para el cuarto proyecto
       title: 'Alimentos Innova',
       category: 'UX/UI',
-      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop',
+      image: 'https://iili.io/KIIjJ0Q.md.jpg',
       description: 'Creación de un sitio web para una empresa fabricante de productos alimenticios',
-      tech: ['Figma', 'Prototyping', 'User Research'],
+      tech:  ['Figma', 'Prototipado', 'Investigación de Usuarios'],
       color: 'var(--color-bright-orange)'
+    },
+    {
+      id: 'ai-project',
+      title: 'AI Assistant',
+      category: 'IA',
+      image: 'https://i.postimg.cc/2yg2S7B0/Frame-427320277.jpg', // Necesitarás añadir esta imagen
+  description: 'Plataforma integral de inteligencia artificial para creación de contenido en múltiples formatos',
+  tech: ['React', 'Node.js', 'FastAPI', 'REST API', 'OpenAI API', 'Generative AI', 'NLP', 'Cloud Services'],
+      color: 'var(--color-purple)'
+    },
+
+    {
+      id: 'reputation-algorithm',
+      title: 'Shop And Gets - Tienda Online Full-Stack',
+      category: 'Data Science',
+      image: 'https://iili.io/KT9JJZx.jpg', // Necesitarás añadir esta imagen
+        description: 'Plataforma full-stack para compras internacionales y gestión logística en tiempo real',
+
+  tech: ['Flutter', 'Node.js', 'REST API', 'Microservicios', 'Cloud Services'],
+
+      color: 'var(--color-blue)'
     }
   ];
 
@@ -59,7 +87,7 @@ export class ProjectsComponent {
     return project.id;
   }
 
-  // En el método que maneja el click del botón "View Project"
+
   viewProject(project: any) {
     if (isPlatformBrowser(this.platformId)) {
       console.log('Navigating to project:', project.id); // Para debug

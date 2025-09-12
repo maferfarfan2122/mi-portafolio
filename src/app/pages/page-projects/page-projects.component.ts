@@ -104,30 +104,31 @@ export class PageProjectsComponent implements OnInit, AfterViewInit {
       const staticData: { [key: string]: Partial<ProjectDetail> } = {
         'ecommerce-platform': {
           id: 'ecommerce-platform',
-          image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop',
+          image: 'https://iili.io/KIc58Vj.md.jpg',
           images: [
-            'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop',
-            'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
-            'https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=800&h=600&fit=crop',
-            'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop'
-          ],
-          technologies: ['Angular', 'Node.js', 'MongoDB', 'Stripe API', 'Docker', 'AWS'],
-          liveUrl: 'https://ecommerce-demo.com',
+            'https://i.postimg.cc/wvb871Mn/Frame-427320259.jpg',
+            'https://i.postimg.cc/Ls8m5KvY/Frame-427320260.jpg',
+            'https://i.postimg.cc/Wb7RkYdM/Frame-427320261.jpg'
+            ],
+          technologies: ['Research', 'PHP', 'React'],
+          liveUrl: 'https://youtu.be/lpvAQNJ9lyY',
           githubUrl: 'https://github.com/username/ecommerce-platform',
           color: 'var(--color-orange)',
-          year: '2024',
-          duration: '4 months'
+          year: '2020',
+          duration: '9 months'
         },
+
         'task-management': {
           id: 'task-management',
-          image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop',
+          image: 'https://i.postimg.cc/tRW80RHq/kid.jpg',
           images: [
-            'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop',
-            'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop',
-            'https://images.unsplash.com/photo-1542744094-3a31f272c490?w=800&h=600&fit=crop'
+            'https://iili.io/KIVe67f.md.jpg',
+            'https://iili.io/KIVSTTx.md.jpg',
+            'https://iili.io/KIV4zKB.md.jpg'
           ],
-          technologies: ['React Native', 'Firebase', 'Redux', 'TypeScript', 'Expo'],
-          liveUrl: 'https://taskmanager-app.com',
+
+          technologies: ['Research', 'User Persona', 'Testing', 'Figma'],
+          liveUrl: 'https://www.figma.com/proto/oxhM0oliAAZKM1wEnKtQx4/Mar%C3%ADa-Fernanda-Farf%C3%A1n---Experience-Design--Copy-?page-id=649%3A3416&type=design&node-id=867-11874&viewport=1441%2C-1819%2C0.14&scaling=scale-down&starting-point-node-id=867%3A11874&t=gfvoO3Xl47IzdaJI-1',
           githubUrl: 'https://github.com/username/task-manager',
           color: 'var(--color-pink)',
           year: '2023',
@@ -135,33 +136,65 @@ export class PageProjectsComponent implements OnInit, AfterViewInit {
         },
         'dashboard-analytics': {
           id: 'dashboard-analytics',
-          image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+          image: 'https://iili.io/KII5mep.md.jpg',
           images: [
-            'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
-            'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
-            'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=600&fit=crop'
+            'https://i.postimg.cc/s2T228qm/Frame-427320265.jpg',
+            'https://iili.io/KIWp2YG.th.jpg',
+            'https://iili.io/KIX9Imx.th.jpg'
           ],
-          technologies: ['Vue.js', 'D3.js', 'Python', 'PostgreSQL', 'Redis', 'Chart.js'],
+          technologies: ['Research', 'UI', 'User Testing'],
           githubUrl: 'https://github.com/username/analytics-dashboard',
           figmaUrl: 'https://figma.com/file/analytics-dashboard',
           color: 'var(--color-blue)',
-          year: '2024',
+          year: '2023',
           duration: '5 months'
         },
         'mobile-app-ui': {
           id: 'mobile-app-ui',
-          image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop',
+          image: 'https://iili.io/KIIjJ0Q.md.jpg',
           images: [
-            'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop',
-            'https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=800&h=600&fit=crop',
-            'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop'
+            'https://i.postimg.cc/d33wDmgy/Frame-427320268.jpg',
+            'https://i.postimg.cc/N5dwgKb4/Frame-427320270.jpg',
+            'https://i.postimg.cc/7fHk831h/Frame-427320269.jpg'
           ],
-          technologies: ['Figma', 'Adobe Creative Suite', 'Principle', 'Sketch', 'InVision'],
-          figmaUrl: 'https://figma.com/file/mobile-app-fitness',
+          technologies:  ['Figma', 'Prototipado', 'Investigación de Usuarios'],
+          figmaUrl: 'https://www.alimentosinnova.com/',
+          liveUrl: 'https://www.alimentosinnova.com/',
           color: 'var(--color-bright-orange)',
-          year: '2023',
+          year: '2020',
           duration: '2 months'
-        }
+        },
+         'ai-project': {
+      id: 'ai-project',
+      image: 'https://i.postimg.cc/2yg2S7B0/Frame-427320277.jpg', // Reemplazar con tu imagen real
+      images: [
+        'https://i.postimg.cc/gjTxPwRq/Frame-427320274.jpg',
+        'https://i.postimg.cc/tJ39BYk4/Frame-427320276.jpg',
+        'https://i.postimg.cc/SxTk106C/Frame-427320275.jpg'
+      ],
+      technologies: ['Python', 'Machine Learning', 'NLP', 'FastAPI'],
+      githubUrl: 'https://github.com/username/ai-assistant',
+      liveUrl: 'https://ai-assistant-demo.com',
+      color: 'var(--color-purple)',
+      year: '2023',
+      duration: '6 months'
+    },
+
+    'reputation-algorithm': {
+      id: 'reputation-algorithm',
+      image: 'https://iili.io/KT9JJZx.jpg', // Reemplazar con tu imagen real
+      images: [
+        'https://iili.io/KT9JHjj.jpg',
+        'https://iili.io/KT9J2CQ.jpg',
+        'https://iili.io/KT9J9Tb.jpg'
+      ],
+      technologies: ['Python', 'GraphQL', 'Neo4j', 'Data Analysis'],
+      githubUrl: 'https://github.com/username/reputation-metrics',
+      liveUrl: 'https://reputation-metrics-demo.com',
+      color: 'var(--color-blue)',
+      year: '2023',
+      duration: '4 months'
+    }
       };
 
       const static_project = staticData[id];
@@ -189,24 +222,37 @@ export class PageProjectsComponent implements OnInit, AfterViewInit {
   }
 
   private getTranslatedArray(baseKey: string): string[] {
-    const array: string[] = [];
-    let index = 0;
-    
-    try {
-      while (index < 20) { // Límite de seguridad
-        const translation = this.translationService.translate(`${baseKey}.${index}`);
-        if (translation === `${baseKey}.${index}`) {
-          break;
-        }
-        array.push(translation);
-        index++;
+  const array: string[] = [];
+  let index = 0;
+  
+  // Definimos límites específicos para cada tipo de array
+  const limits: { [key: string]: number } = {
+    'features': 7,      // 0-6 (7 elementos)
+    'challenges': 4,    // 0-3 (4 elementos)
+    'solutions': 4,     // 0-3 (4 elementos)
+    'results': 4,       // 0-3 (4 elementos)
+    'team': 3          // 0-2 (3 elementos)
+  };
+
+  // Obtener el tipo de array de la clave base
+  const arrayType = baseKey.split('.').pop() || '';
+  const limit = limits[arrayType] || 20;
+
+  try {
+    while (index < limit) {
+      const translation = this.translationService.translate(`${baseKey}.${index}`);
+      if (translation === `${baseKey}.${index}`) {
+        break;
       }
-    } catch (error) {
-      console.error('Error getting translated array:', error);
+      array.push(translation);
+      index++;
     }
-    
-    return array;
+  } catch (error) {
+    console.error('Error getting translated array:', error);
   }
+  
+  return array;
+}
 
   goBack() {
     if (this.isBrowser) {

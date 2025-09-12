@@ -1,4 +1,4 @@
-import { Component, OnInit, PLATFORM_ID, Inject } from '@angular/core';
+import { Component, OnInit, PLATFORM_ID, Inject, HostListener } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { TranslatePipe } from '../translate.pipe';
 import { LanguageSelectorComponent } from '../translation/translation.component';
@@ -12,9 +12,13 @@ import { LanguageSelectorComponent } from '../translation/translation.component'
 })
 export class NavbarComponent implements OnInit {
   isMobileMenuOpen = false;
+   activeSection = 'home';
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
-
+ @HostListener('window:scroll', ['$event'])
+  onWindowScroll() {
+    this.updateActiveSection();
+  }
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       // Escuchar cambios de tamaño de ventana para cerrar el menú móvil
@@ -53,4 +57,37 @@ export class NavbarComponent implements OnInit {
       document.body.style.overflow = 'auto';
     }
   }
+  
+  scrollToSection(sectionId: string, event: Event) {
+    event.preventDefault();
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const yOffset = -80; // Ajusta este valor según el alto de tu navbar
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      
+      window.scrollTo({
+        top: y,
+        behavior: 'smooth'
+      });
+    }
+    this.activeSection = sectionId;
+    if (this.isMobileMenuOpen) {
+      this.closeMobileMenu();
+    }
+  }
+  private updateActiveSection() {
+    const sections = ['home', 'about', 'projects', 'contact'];
+    
+    for (const section of sections) {
+      const element = document.getElementById(section);
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        if (rect.top <= 100 && rect.bottom >= 100) {
+          this.activeSection = section;
+          break;
+        }
+      }
+    }
+  }
+
 }

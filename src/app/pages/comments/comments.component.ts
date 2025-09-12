@@ -23,67 +23,67 @@ export class CommentsComponent implements OnInit, AfterViewInit {
 testimonials = [
   {
     id: 1,
-    name: 'Sarah Johnson',
-    role: 'Product Manager',
-    company: 'TechFlow',
-    avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b5e5?w=60&h=60&fit=crop&crop=face',
+    name: 'Pau Pons Janer',
+    role: 'Web Scraper & Back-End Developer',
+    company: 'Bootcamp de IA con Python',
+    avatar: 'https://media.licdn.com/dms/image/v2/D4D03AQHMsytpjqzQ4A/profile-displayphoto-shrink_800_800/B4DZTRw0ekHIAk-/0/1738686025763?e=1760572800&v=beta&t=xTydiLNB2CyBzCzC6YME6eaHTJHj6VS0M5sFmlxf848',
     platform: 'LinkedIn',
-    date: 'Mar 15, 2024',
-    content: 'Working with María Fernanda was exceptional. Her attention to detail and creative problem-solving skills made our project a huge success. Highly recommended!',
+    date: 'Dec 10, 2023',
+    content: 'Es un verdadero placer recomendar a Mafer como compañera en el Bootcamp de IA con Python. Su energía positiva, su comunicación efectiva y su creatividad como Front-End marcaron la diferencia en nuestro equipo.',
     rating: 5,
-    bgColor: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+    bgColor: 'linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)'
   },
   {
     id: 2,
-    name: 'Alex Chen',
-    role: 'Lead Developer',
-    company: 'InnovateLab',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face',
-    platform: 'GitHub',
-    date: 'Feb 28, 2024',
-    content: 'María Fernanda\'s code quality is outstanding. She delivered clean, scalable solutions that exceeded our expectations. A true professional.',
+    name: 'Aleix Sastre Moreno',
+    role: 'Full-Stack Developer (Django, Python, JS)',
+    company: 'Bootcamp de IA con Python',
+    avatar: 'https://media.licdn.com/dms/image/v2/D4D03AQFCfmz2PD4QpQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1723463544010?e=1760572800&v=beta&t=lbluPm0Tr_VqaXyWA6fsSOVYUgpCoeCr0OtHlYRyHPU',
+    platform: 'LinkedIn',
+    date: 'Nov 29, 2023',
+    content: 'Mafer es una profesional excepcional en frontend, con gran conocimiento técnico, atención al detalle y un contagioso sentido del humor que convierte cada proyecto en una experiencia positiva y productiva.',
     rating: 5,
-    bgColor: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
+    bgColor: 'linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)'
   },
   {
     id: 3,
-    name: 'Elena Rodriguez',
-    role: 'UX Director',
-    company: 'CreativeStudio',
-    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=face',
-    platform: 'Behance',
-    date: 'Jan 12, 2024',
-    content: 'The user experience designs were phenomenal. María Fernanda understands both aesthetics and functionality perfectly. Amazing work!',
+    name: 'Laura Betancur',
+    role: 'Sr. Graphic Designer & UX/UI Designer',
+    company: 'Máster en Diseño de Experiencias Digitales',
+    avatar: 'https://media.licdn.com/dms/image/v2/D4D03AQEcd8O9BuIo1g/profile-displayphoto-shrink_800_800/B4DZSyom4DHYAg-/0/1738163777686?e=1760572800&v=beta&t=CgXwL6RcakUg1-XP3V9DUXqEZQqu5CqV6niyIONVUEA',
+    platform: 'LinkedIn',
+    date: 'May 11, 2023',
+    content: 'Estudiar con Mafer fue una experiencia maravillosa. Es una profesional atenta, con habilidades excepcionales para trabajar en equipo y un futuro brillante por delante en el diseño de experiencias digitales.',
     rating: 5,
-    bgColor: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)'
+    bgColor: 'linear-gradient(135deg, #f6d365 0%, #fda085 100%)'
   },
   {
     id: 4,
-    name: 'Michael Turner',
-    role: 'Startup Founder',
-    company: 'NextGen Apps',
-    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face',
-    platform: 'Twitter',
-    date: 'Dec 5, 2023',
-    content: 'From concept to launch, María Fernanda guided our entire development process. Her expertise in both frontend and backend was invaluable.',
+    name: 'Helena Silva',
+    role: 'UX/UI Designer at Centiment | UX Mentor at Uxcel',
+    company: 'BAU, Máster UX',
+    avatar: 'https://media.licdn.com/dms/image/v2/D4D03AQHvqZg5VP-qtw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1725538969085?e=1760572800&v=beta&t=egTNsrPdTPnaNu5Tm1cC8wDrRE2i6GgANGc2Is9DY_U',
+    platform: 'LinkedIn',
+    date: 'Apr 17, 2023',
+    content: 'I highly recommend Mafer as a skilled and passionate UX designer. Her background in web development and expertise in UX research make her a unique asset to any team. She excels with scrum and agile methodologies.',
     rating: 5,
-    bgColor: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)'
+    bgColor: 'linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%)'
   },
   {
     id: 5,
-    name: 'Lisa Park',
-    role: 'Design Lead',
-    company: 'PixelCraft',
-    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=60&h=60&fit=crop&crop=face',
-    platform: 'Dribbble',
-    date: 'Nov 18, 2023',
-    content: 'Amazing collaboration! María Fernanda brings fresh ideas and technical excellence. Her work elevated our entire project.',
+    name: 'Rony Diaz',
+    role: 'Freelancer Front-End',
+    company: 'Proyectos de desarrollo web',
+    avatar: 'https://media.licdn.com/dms/image/v2/D5603AQHq2JliB9P6QA/profile-displayphoto-crop_800_800/B56Zk6FZlRJwAI-/0/1757616118576?e=1760572800&v=beta&t=Lqz2KEc0mc483g5scC1XRr7gk2tmHdQe2efcw2dk_1g',
+    platform: 'LinkedIn',
+    date: 'Feb 20, 2023',
+    content: 'Trabajar con Mafer fue muy positivo. Su liderazgo, comunicación clara y propuestas para mejorar la experiencia del usuario marcaron la diferencia. Siempre colaborativa y comprometida con el equipo.',
     rating: 5,
-    bgColor: 'linear-gradient(135deg, #a8e6cf 0%, #dcedc1 100%)'
+    bgColor: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)'
   }
 ];
 
-// ...existing code...
+
 
   ngOnInit() {
     this.totalSlides = this.testimonials.length;
