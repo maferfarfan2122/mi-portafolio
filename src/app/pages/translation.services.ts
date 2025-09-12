@@ -1043,7 +1043,7 @@ project: {
       longDescription: 'We developed a full-stack online store modernizing the Shop And Gets platform, integrating improvements in design, performance, and functionality. The system allows users to manage international shopping, door-to-door shipping, and customs processes from any device. With Flutter as a cross-platform frontend and a robust backend based on microservices, we ensured scalability, security, and a smooth experience. The platform centralizes logistics processes, merchandise consolidation, and real-time cost management, providing transparency and trust to clients in the United States, China, Spain, and beyond.',
       category: 'E-commerce & Logistics',
       features: {
-        '0': 'Cross-platform frontend in Flutter',
+        '0': 'Cross-platform frontend in Flutter.',
         '1': 'Scalable backend with modern architecture',
         '2': 'Comprehensive management of international shipping',
         '3': 'Real-time cost and rate calculation',
